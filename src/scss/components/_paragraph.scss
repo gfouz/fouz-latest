@@ -1,0 +1,4 @@
+@mixin paragraph($padding: 1em) {
+  font-size: calc(1em + 1vw);
+  padding: $padding;
+}

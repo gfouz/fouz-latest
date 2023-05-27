@@ -1,0 +1,14 @@
+@use "scss-components/buttons" as *;
+
+.submitButton {
+  @include button(#ffffff, #0287c3);
+  margin-right: 0.5rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  button:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+}

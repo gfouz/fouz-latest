@@ -1,0 +1,5 @@
+@use "scss/abstracts/mixins.scss" as *;
+
+.container {
+  @include flex-column-start;
+}

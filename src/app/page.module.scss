@@ -1,0 +1,46 @@
+@use "scss/styles" as *;
+
+$font-size: 0.1em;
+
+.homepage_main {
+  img {
+    @include responsive-image;
+  }
+}
+.homepage__navbar {
+  @include simple-navbar(#000000, #fcfca1);
+  font-weight: bolder;
+  padding: 0.5em 0;
+}
+.homepage_article {
+  @include grid-two-columns(750);
+  background-color: #fcfca1;
+}
+.homepage_article__section1 {
+  color: #f1f1f1;
+  padding: 1em;
+  @extend .flex-column-center;
+  @include responsive-font-size;
+  background-color: #111111;
+}
+.homepage_article__section2 {
+  color: #222222;
+  @extend .homepage_article__section1;
+  background-color: #fcfca1;
+}
+.homepage_article__section3 {
+  color: #222222;
+  @extend .homepage_article__section1;
+  background-color: #fcfca1;
+}
+.homepage_article__section_image {
+  background-color: #000000;
+}
+.homepage_article__title {
+  font-style: italic;
+}
+.homepage__footer {
+  color: #f1f1f1;
+  @extend .footer;
+  padding: 1em;
+}

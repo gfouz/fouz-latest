@@ -1,0 +1,42 @@
+@use "scss/styles.scss" as *;
+
+.contact {
+  @extend .flex-column-center;
+  min-height: 100vh;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("/images/contact.jpg");
+}
+
+.contact__title {
+  @include subtitle(#f1f1f1);
+  font-style: italic;
+}
+
+.contact__form {
+  @extend .flex-column-space-evenly;
+  max-width: 600px;
+  min-width: 320px;
+  min-height: 500px;
+  background-color: #00000090;
+  border-radius: 20px;
+  padding: 2em;
+}
+
+.contact_queryStatus {
+  color: #f1f1f1;
+}
+
+.upwards {
+  position: relative;
+  bottom: 10px;
+}
+.downwards {
+  position: relative;
+  bottom: -10px;
+}
+.normal {
+  position: static;
+}

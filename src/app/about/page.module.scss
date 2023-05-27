@@ -1,0 +1,47 @@
+@use "scss/styles.scss" as *;
+
+.about {
+  @extend .simple-grid-template;
+  min-height: 100vh;
+  img {
+    @include responsive-image;
+  }
+}
+.about__title {
+  @include subtitle(#f1f1f1);
+  font-style: italic;
+  margin: 1em 0;
+  font-size: 6vw;
+}
+.about__navbar {
+  @include simple-navbar(#f1f1f1, #222222);
+  font-weight: bolder;
+  height: 100%;
+}
+
+.about__header {
+  @extend .grid__header;
+}
+.about__footer {
+  @extend .grid__footer;
+}
+.about__main {
+  @extend .grid__main;
+  background-color: yellow;
+}
+.about__main_article {
+  position: relative;
+}
+.about__absolute_container {
+  color: #222222;
+  @extend .absolute-container;
+  @extend .flex-column-end;
+}
+.about__aside {
+  @extend .grid__aside;
+  @include responsive-font-size;
+  padding: 1rem;
+  background-color: #dadcde;
+}
+
+//npx serve@latest out
