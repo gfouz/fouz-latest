@@ -15,15 +15,17 @@ export const axiosApi = axios.create({
   withCredentials: false,
 });
 
-export interface FormData {
+export interface ContactData {
   name: string;
   email: string;
   message: string;
 }
 
-export async function contactService(data: FormData): Promise<FormData | any> {
+export async function contactService(
+  data: ContactData
+): Promise<ContactData | any> {
   try {
-    const res = await axios.post<FormData>(
+    const res = await axios.post<ContactData>(
       "https://formspree.io/f/xdovlonj",
       data
     );

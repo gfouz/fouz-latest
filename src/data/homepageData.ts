@@ -78,7 +78,7 @@ with ORM or ODM to abstract databases such as Sequelize or Mongoose. I
 have also used libraries such as axios, bcrypt, jsonwebtoken, dotenv, joi and
 others...`;
 
-export const experience = `I worked in the first phase of a system to generate digital 
+export const experience = `I worked in the first stage of a system to generate digital 
 certificates. I used Sequelize (ORM) for this project even though i also created a 
 Mongoose version. As well as i designed the Rest Api of routes and 
 controllers with the help of Nest Js. I used NextJs for client side rendering, this system has great importance for the development 

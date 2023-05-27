@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { QueryClientProvider, QueryClient } from "react-query";
 //import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from "@chakra-ui/react";
 
 function Providers({ children }: React.PropsWithChildren) {
   const [client] = React.useState(
@@ -12,9 +12,7 @@ function Providers({ children }: React.PropsWithChildren) {
 
   return (
     <QueryClientProvider client={client}>
-     <ChakraProvider>
-      {children}
-     </ChakraProvider> 
+      <ChakraProvider>{children}</ChakraProvider>
     </QueryClientProvider>
   );
 }

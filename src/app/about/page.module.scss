@@ -25,6 +25,11 @@
 .about__footer {
   @extend .grid__footer;
 }
+.about__summary {
+  color: #ff0000;
+  font-style: italic;
+  font-weight: bolder;
+}
 .about__main {
   @extend .grid__main;
   background-color: yellow;

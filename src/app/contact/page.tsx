@@ -1,23 +1,23 @@
-'use client'
+"use client";
 import * as React from "react";
 import s from "./page.module.scss";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation } from "react-query";
 import { useRouter } from "next/navigation";
 import { Input, Textarea } from "@chakra-ui/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 //import Home from "icons/Home";
 import ErrorWarning from "components/errorwarning/ErrorWarning";
-import  SubmitButton  from "components/submitbutton/SubmitButton";
+import SubmitButton from "components/submitbutton/SubmitButton";
 
-import { contactService, FormData } from "services/httpService";
+import { contactService, ContactData } from "services/httpService";
 
 function Contact() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<ContactData>();
 
   const emailWarning = "a valid email is required.";
   const warningMessage = "message must not be empty.";
@@ -33,13 +33,14 @@ function Contact() {
     router.push("/");
   }
 
-  const response = useMutation((data: FormData) => contactService(data));
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
+  const response = useMutation((data: ContactData) => contactService(data));
+  const onSubmit: SubmitHandler<ContactData> = async (data) => {
     response.mutateAsync(data);
   };
   //const message = response?.data?.message || response?.data;
+  console.log(response?.data);
   return (
-    <div className={s.contact} >
+    <div className={s.contact}>
       <form className={s.contact__form} onSubmit={handleSubmit(onSubmit)}>
         <h2
           style={{
@@ -49,7 +50,7 @@ function Contact() {
         >
           Contact Me
         </h2>
-        <label htmlFor="email" className={isOver ? s.upwards : s.normal}>
+        <label htmlFor="email" className={isOver ? s.downwards : s.normal}>
           Your email
         </label>
         <Input
@@ -65,46 +66,36 @@ function Contact() {
             pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
           })}
         />
-        <ErrorWarning
-          label="email"
-          errors={errors}
-          info={emailWarning}
-        />
+        <ErrorWarning label="email" errors={errors} info={emailWarning} />
 
-    
-          <label
-            htmlFor="message"
-            className={isOver ? "upwards" : "normal"}
-          >
-            Your message
-          </label>
-          <Textarea
-            className={
-              errors.hasOwnProperty("message") ? "messageError" : undefined
-            }
-            onMouseEnter={() => {
-              setIsOver(true);
-            }}
-            onMouseLeave={() => {
-              setIsOver(false);
-            }}
-            {...register("message", {
-              required: true,
-            })}
-          ></Textarea>
-          <ErrorWarning
-            label="message"
-            errors={errors}
-            info={warningMessage}
-          />
-      
+        <label htmlFor="message" className={isOver ? "downwards" : "normal"}>
+          Your message
+        </label>
+        <Textarea
+          className={
+            errors.hasOwnProperty("message") ? "messageError" : undefined
+          }
+          onMouseEnter={() => {
+            setIsOver(true);
+          }}
+          onMouseLeave={() => {
+            setIsOver(false);
+          }}
+          {...register("message", {
+            required: true,
+          })}
+          style={{ color: "white" }}
+        ></Textarea>
+
+        <ErrorWarning label="message" errors={errors} info={warningMessage} />
+
         <SubmitButton loading={response?.isLoading} />
         {response?.data?.ok ? (
-          <p className={s.contact_queryStatus}>Thanks, message sent to Giovani!</p>
-        ) : (
-          <p style={{ color: "orange" }}>
-            {response?.data?.message}
+          <p className={s.contact_queryStatus}>
+            Thanks, message sent to Giovani!
           </p>
+        ) : (
+          <p style={{ color: "orange" }}>{response?.data}</p>
         )}
       </form>
     </div>

@@ -9,7 +9,7 @@ interface Button {
 
 function SubmitButton(props: Button) {
   const { loading } = props;
-  
+
   return (
     <div className={s.buttonContainer}>
       <button className={s.submitButton}>

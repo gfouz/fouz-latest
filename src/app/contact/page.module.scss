@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url("/images/contact.jpg");
+  background-image: url("../../../public/contact.jpg");
 }
 
 .contact__title {
@@ -29,14 +29,32 @@
   color: #f1f1f1;
 }
 
-.upwards {
-  position: relative;
-  bottom: 10px;
-}
 .downwards {
-  position: relative;
-  bottom: -10px;
+  color: #f1f1f1;
+  animation: down 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
+
 .normal {
-  position: static;
+  color: #f1f1f1;
+  animation: reset 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+@keyframes reset {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }

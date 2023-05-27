@@ -8,7 +8,7 @@ $font-size: 0.1em;
   }
 }
 .homepage__navbar {
-  @include simple-navbar(#000000, #fcfca1);
+  @include simple-navbar(#000000, #01efff);
   font-weight: bolder;
   padding: 0.5em 0;
 }

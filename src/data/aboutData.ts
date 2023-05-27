@@ -76,3 +76,7 @@ TypeScript framework for building flexible, scalable, large-scale,
 and enterprise-ready backend applications using Node.js. 
 When building highly testable, well-structured, and maintainable backend 
 applications using TypeScript.`;
+
+export const about_typescript = `TypeScript can help me to write a lot of 
+JavaScript with fewer bugs or document your code well for other people to
+read.`;

@@ -3,7 +3,7 @@ import s from "./page.module.scss";
 import { navbarVariant, about_react, experience } from "data/homepageData";
 import homepage from "../../public/homepage.jpg";
 import colors from "../../public/colors.jpg";
-import nest from "../../public/nestinf.jpg";
+import nest from "../../public/tech.jpg";
 import Navbar from "components/navbar/Navbar";
 import MotionOnScroll from "components/motiononscroll/MotionOnScroll";
 
