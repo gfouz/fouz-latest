@@ -1,38 +1,38 @@
-@use "scss/styles.scss" as *;
+@use 'scss/styles.scss' as *;
+
+ $innerSpace: 1rem;
+ $darkgrey: #222222;
+ $ghostWhite: #f8f8ff;
 
 .about {
-  @extend .simple-grid-template;
+  @extend .composite-grid;
   min-height: 100vh;
   img {
     @include responsive-image;
   }
 }
 .about__title {
-  @include subtitle(#f1f1f1);
   font-style: italic;
-  margin: 1em 0;
-  font-size: 6vw;
+  font-size: 19px;
 }
 .about__navbar {
-  @include simple-navbar(#f1f1f1, #222222);
+  @include simple-navbar(#f1f1f1, $darkgrey);
   font-weight: bolder;
   height: 100%;
 }
 
 .about__header {
-  @extend .grid__header;
+  @extend .composite-grid__header;
 }
 .about__footer {
-  @extend .grid__footer;
+  color: $ghostWhite;
+  @extend .composite-grid__footer;
+  background-color: $darkgrey;
 }
-.about__summary {
-  color: #ff0000;
-  font-style: italic;
-  font-weight: bolder;
-}
+
 .about__main {
-  @extend .grid__main;
-  background-color: yellow;
+  @extend .composite-grid__main;
+  background-color: #dadcde;
 }
 .about__main_article {
   position: relative;
@@ -43,10 +43,21 @@
   @extend .flex-column-end;
 }
 .about__aside {
-  @extend .grid__aside;
-  @include responsive-font-size;
-  padding: 1rem;
+  padding: $innerSpace;
   background-color: #dadcde;
+  @extend .composite-grid__aside;
+  @include responsive-font-size;
 }
-
+.about__aside_details {
+  @extend .flex-column-end;
+  align-items: flex-start;
+  padding: $innerSpace;
+  @extend .composite-grid__details;
+}
+.about__summary {
+  color: #ff0000;
+  font-style: italic;
+  font-weight: bolder;
+  font-size: 19px;
+}
 //npx serve@latest out

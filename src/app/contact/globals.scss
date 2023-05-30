@@ -1,4 +1,4 @@
-@use "scss/abstracts/variables.scss" as *;
+@use 'scss/abstracts/variables.scss' as *;
 
 :root {
   --rose-red: #c40550;
@@ -28,8 +28,8 @@ dd {
   margin: 0;
 }
 
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
   margin: 0;
   padding: 0;

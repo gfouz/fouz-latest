@@ -1,4 +1,4 @@
-@use "scss-components/buttons" as *;
+@use 'scss-components/buttons' as *;
 
 .submitButton {
   @include button(#ffffff, #0287c3);

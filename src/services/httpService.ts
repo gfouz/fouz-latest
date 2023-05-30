@@ -1,10 +1,10 @@
-import axios from "axios";
-import { DTO, FormData } from "interfaces/interfaces";
+import axios from 'axios';
+import { DTO, FormData } from 'interfaces/interfaces';
 
 type id_t = string | undefined;
 type st = string;
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = 'http://localhost:4000';
 
 //const jwt = localStorage.getItem('jwt');
 // Empty value is to be validated by the express middleware.
@@ -21,12 +21,12 @@ export interface ContactData {
   message: string;
 }
 
-export async function contactService(
+export async function contactPostService(
   data: ContactData
 ): Promise<ContactData | any> {
   try {
     const res = await axios.post<ContactData>(
-      "https://formspree.io/f/xdovlonj",
+      'https://formspree.io/f/xdovlonj',
       data
     );
     const { data: result } = res;
@@ -117,7 +117,7 @@ export const getServerMessage = (
 export async function downloadVaucher(ci: id_t): Promise<any> {
   try {
     const res = await axios.get<any>(`http://localhost:4000/voucher`, {
-      responseType: "blob",
+      responseType: 'blob',
     });
     const result = res.data;
     return result;

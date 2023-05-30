@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import { motion, useAnimation, Variants } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+'use client';
+import React from 'react';
+import { motion, useAnimation, Variants } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 interface MotionOnScrollProps {
   children?: React.ReactNode;
@@ -15,9 +15,9 @@ const MotionOnScroll = (props: MotionOnScrollProps) => {
 
   React.useEffect(() => {
     if (inView) {
-      control.start("visible");
+      control.start('visible');
     } else {
-      control.start("hidden");
+      control.start('hidden');
     }
   }, [control, inView]);
 

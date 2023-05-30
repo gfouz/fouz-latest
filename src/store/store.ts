@@ -1,4 +1,4 @@
-import { proxy } from "valtio";
+import { proxy } from 'valtio';
 
 interface IStackPattern {
   [key: string]: any;
@@ -37,7 +37,7 @@ interface IStateData {
   setOption: (option: string) => string;
 }
 export const state: IStateData = proxy({
-  opt: "mostrar",
+  opt: 'mostrar',
   setOption: (option) => (state.opt = option),
 });
 

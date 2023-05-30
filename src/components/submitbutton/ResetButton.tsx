@@ -1,6 +1,6 @@
-import * as React from "react";
-import s from "./Resetbutton.module.scss";
-import { useRouter } from "next/navigation";
+import * as React from 'react';
+import s from './Resetbutton.module.scss';
+import { useRouter } from 'next/navigation';
 
 function ResetButton() {
   const router = useRouter();
@@ -9,7 +9,7 @@ function ResetButton() {
     evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) {
     evt.preventDefault();
-    router.push("/provincia");
+    router.push('/provincia');
   }
   return (
     <div className={s.buttonContainer}>

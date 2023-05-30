@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export interface FormData {
   name: string;
@@ -8,7 +8,7 @@ export interface FormData {
 export async function contactService(data: FormData): Promise<FormData | any> {
   try {
     const res = await axios.post<FormData>(
-      "https://formspree.io/f/xdovlonj",
+      'https://formspree.io/f/xdovlonj',
       data
     );
     const { data: result } = res;

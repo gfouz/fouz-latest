@@ -1,4 +1,4 @@
-import s from "./button.module.scss";
+import s from './button.module.scss';
 
 interface IButton {
   st: boolean;

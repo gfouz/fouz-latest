@@ -1,28 +1,31 @@
-"use client";
-import * as React from "react";
-import s from "./page.module.scss";
-import { useMutation } from "react-query";
-import { useRouter } from "next/navigation";
-import { Input, Textarea } from "@chakra-ui/react";
-import { useForm, SubmitHandler } from "react-hook-form";
+'use client';
+import * as React from 'react';
+import s from './page.module.scss';
+import { useMutation, useQueryClient } from 'react-query';
+import { useRouter } from 'next/navigation';
+import { Input, Textarea } from '@chakra-ui/react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 //import Home from "icons/Home";
-import ErrorWarning from "components/errorwarning/ErrorWarning";
-import SubmitButton from "components/submitbutton/SubmitButton";
+import ErrorWarning from 'components/errorwarning/ErrorWarning';
+import SubmitButton from 'components/submitbutton/SubmitButton';
 
-import { contactService, ContactData } from "services/httpService";
+import { contactPostService, ContactData } from 'services/httpService';
 
 function Contact() {
+  const queryClient = useQueryClient();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ContactData>();
 
-  const emailWarning = "a valid email is required.";
-  const warningMessage = "message must not be empty.";
+  const emailWarning = 'a valid email is required.';
+  const warningMessage = 'message must not be empty.';
 
-  const [isOver, setIsOver] = React.useState(false);
+  const [isOverEmail, setIsOverEmail] = React.useState(false);
+  const [isOverMessage, setIsOverMessage] = React.useState(false);
+
 
   const router = useRouter();
 
@@ -30,72 +33,74 @@ function Contact() {
     evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) {
     evt.preventDefault();
-    router.push("/");
+    router.push('/');
   }
 
-  const response = useMutation((data: ContactData) => contactService(data));
+  const mutation = useMutation({
+    mutationFn: (data: ContactData) => contactPostService(data),
+  });
   const onSubmit: SubmitHandler<ContactData> = async (data) => {
-    response.mutateAsync(data);
+    mutation.mutateAsync(data);
   };
-  //const message = response?.data?.message || response?.data;
-  console.log(response?.data);
+  console.log(mutation);
   return (
     <div className={s.contact}>
       <form className={s.contact__form} onSubmit={handleSubmit(onSubmit)}>
         <h2
           style={{
-            color: errors?.hasOwnProperty("email") ? "#ff0000" : "#ffffff",
-            transition: "1s",
+            color: errors?.hasOwnProperty('email') ? '#ff0000' : '#ffffff',
+            transition: '1s',
           }}
+          className={s.contact__title}
         >
           Contact Me
         </h2>
-        <label htmlFor="email" className={isOver ? s.downwards : s.normal}>
+        <label htmlFor="email" className={ isOverEmail ? s.downwards : s.normal}>
           Your email
         </label>
         <Input
           id="email"
           onMouseEnter={() => {
-            setIsOver(true);
+            setIsOverEmail(true);
           }}
           onMouseLeave={() => {
-            setIsOver(false);
+            setIsOverEmail(false);
           }}
-          {...register("email", {
+          {...register('email', {
             required: true,
             pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
           })}
         />
         <ErrorWarning label="email" errors={errors} info={emailWarning} />
 
-        <label htmlFor="message" className={isOver ? "downwards" : "normal"}>
+        <label htmlFor="message" className={isOverMessage ? s.downwards : s.normal}>
           Your message
         </label>
         <Textarea
           className={
-            errors.hasOwnProperty("message") ? "messageError" : undefined
+            errors.hasOwnProperty('message') ? 'messageError' : undefined
           }
           onMouseEnter={() => {
-            setIsOver(true);
+            setIsOverMessage(true);
           }}
           onMouseLeave={() => {
-            setIsOver(false);
+            setIsOverMessage(false);
           }}
-          {...register("message", {
+          {...register('message', {
             required: true,
           })}
-          style={{ color: "white" }}
+          style={{ color: 'white' }}
         ></Textarea>
 
         <ErrorWarning label="message" errors={errors} info={warningMessage} />
 
-        <SubmitButton loading={response?.isLoading} />
-        {response?.data?.ok ? (
+        <SubmitButton loading={mutation?.isLoading} />
+        {mutation?.data?.ok ? (
           <p className={s.contact_queryStatus}>
             Thanks, message sent to Giovani!
           </p>
         ) : (
-          <p style={{ color: "orange" }}>{response?.data}</p>
+          <p className={s.contact_exeptionMessage}>{mutation?.data}</p>
         )}
       </form>
     </div>

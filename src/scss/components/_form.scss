@@ -1,5 +1,5 @@
-@use "scss/layout/flex" as *;
-@use "scss/abstracts/variables" as *;
+@use 'scss/layout/flex' as *;
+@use 'scss/abstracts/variables' as *;
 
 @mixin form {
   @include flex-column-start;

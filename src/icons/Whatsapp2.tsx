@@ -1,10 +1,10 @@
-import * as React from "react";
-import { ISvgProps } from "./constants";
+import * as React from 'react';
+import { ISvgProps } from './constants';
 
 export const Whatsapp = ({
-  height = "24px",
-  width = "24px",
-  color = "black",
+  height = '24px',
+  width = '24px',
+  color = 'black',
   ...props
 }: React.SVGProps<SVGSVGElement> | ISvgProps) => (
   <svg

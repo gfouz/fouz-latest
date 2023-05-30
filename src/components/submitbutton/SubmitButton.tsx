@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Spinner } from "@chakra-ui/react";
-import s from "./Submitbutton.module.scss";
-import ResetButton from "./ResetButton";
+import * as React from 'react';
+import { Spinner } from '@chakra-ui/react';
+import s from './Submitbutton.module.scss';
+import ResetButton from './ResetButton';
 
 interface Button {
   loading: boolean | undefined;

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NavbarProps {
   list: string[];
@@ -16,7 +16,7 @@ const Navbar = ({ list, className }: NavbarProps) => {
     <ul className={className}>
       {currentlist?.map((link: string, index) => (
         <li key={index}>
-          <Link href={`${link}`}>{link === "/" ? "home" : link.slice(1)}</Link>
+          <Link href={`${link}`}>{link === '/' ? 'home' : link.slice(1)}</Link>
         </li>
       ))}
     </ul>

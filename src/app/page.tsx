@@ -1,13 +1,13 @@
-import Image from "next/image";
-import s from "./page.module.scss";
-import { navbarVariant, about_react, experience } from "data/homepageData";
-import homepage from "../../public/homepage.jpg";
-import colors from "../../public/colors.jpg";
-import nest from "../../public/tech.jpg";
-import Navbar from "components/navbar/Navbar";
-import MotionOnScroll from "components/motiononscroll/MotionOnScroll";
+import Image from 'next/image';
+import s from './page.module.scss';
+import { navbarVariant, about_react, experience } from 'data/homepageData';
+import homepage from '../../public/homepage.jpg';
+import colors from '../../public/colors.jpg';
+import nest from '../../public/tech.jpg';
+import Navbar from 'components/navbar/Navbar';
+import MotionOnScroll from 'components/motiononscroll/MotionOnScroll';
 
-const pages = ["/", "/about", "/work", "/contact"];
+const pages = ['/', '/about', '/work', '/contact'];
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
-import * as React from "react";
-import s from "./ErrorWarning.module.scss";
+import * as React from 'react';
+import s from './ErrorWarning.module.scss';
 
 interface IErrorWarning {
   info?: string;

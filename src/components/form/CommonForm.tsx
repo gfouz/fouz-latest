@@ -1,11 +1,11 @@
-import * as React from "react";
-import { FieldErrors } from "react-hook-form";
-import { UseMutationResult } from "react-query";
+import * as React from 'react';
+import { FieldErrors } from 'react-hook-form';
+import { UseMutationResult } from 'react-query';
 
-import s from "./CommonForm.module.scss";
-import SubmitButton from "components/submitbutton/SubmitButton";
-import ExceptionHandler from "components/exceptionhandler/ExceptionHandler";
-import { FormData } from "@/interfaces/interfaces";
+import s from './CommonForm.module.scss';
+import SubmitButton from 'components/submitbutton/SubmitButton';
+import ExceptionHandler from 'components/exceptionhandler/ExceptionHandler';
+import { FormData } from '@/interfaces/interfaces';
 
 interface FormProps {
   error: FieldErrors<FormData>;

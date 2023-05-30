@@ -1,5 +1,5 @@
-import * as React from "react";
-import s from "./exceptionhandler.module.scss";
+import * as React from 'react';
+import s from './exceptionhandler.module.scss';
 
 interface HandlerProps {
   response: string;

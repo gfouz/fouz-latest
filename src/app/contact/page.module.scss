@@ -1,4 +1,4 @@
-@use "scss/styles.scss" as *;
+@use 'scss/styles.scss' as *;
 
 .contact {
   @extend .flex-column-center;
@@ -7,12 +7,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url("../../../public/contact.jpg");
+  background-image: url('../../../public/contact.jpg');
 }
 
 .contact__title {
   @include subtitle(#f1f1f1);
   font-style: italic;
+  font-size: 19px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.contact__label {
+  color: #f1f1f1;
 }
 
 .contact__form {
@@ -25,11 +31,13 @@
   padding: 2em;
 }
 
-.contact_queryStatus {
+.contact_exeptionMessage {
   color: #f1f1f1;
+  letter-spacing: 1px;
 }
 
 .downwards {
+  align-self: flex-start;
   color: #f1f1f1;
   animation: down 1s;
   animation-timing-function: ease-out;
@@ -37,6 +45,7 @@
 }
 
 .normal {
+  align-self: flex-start;
   color: #f1f1f1;
   animation: reset 1s;
   animation-fill-mode: forwards;

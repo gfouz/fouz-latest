@@ -1,18 +1,18 @@
-import * as React from "react";
-import { ISvgProps } from "./constants";
+import * as React from 'react';
+import { ISvgProps } from './constants';
 
 export function AngleRight(props: React.SVGProps<SVGSVGElement> | ISvgProps) {
   return React.createElement(
-    "svg",
+    'svg',
     {
-      viewBox: "0 0 256 512",
-      width: props.width || "1em",
-      length: props.height || "auto",
+      viewBox: '0 0 256 512',
+      width: props.width || '1em',
+      length: props.height || 'auto',
       ...props,
     },
-    React.createElement("path", {
+    React.createElement('path', {
       fill: props.color,
-      d: "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+      d: 'M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z',
     })
   );
 }

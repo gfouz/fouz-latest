@@ -1,6 +1,6 @@
-import { useSnapshot } from "valtio";
-import { state } from "store/store";
-import s from "./ServiceCollector.module.scss";
+import { useSnapshot } from 'valtio';
+import { state } from 'store/store';
+import s from './ServiceCollector.module.scss';
 
 interface Service {
   name: string;

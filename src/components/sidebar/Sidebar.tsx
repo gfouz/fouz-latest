@@ -1,8 +1,8 @@
-import s from "./sidebar.module.scss";
-import Navbar from "./Navbar";
-import { useSnapshot } from "valtio";
-import { IRouteArray } from "./constants";
-import { switcher } from "store/store";
+import s from './sidebar.module.scss';
+import Navbar from './Navbar';
+import { useSnapshot } from 'valtio';
+import { IRouteArray } from './constants';
+import { switcher } from 'store/store';
 
 export default function Sidebar(props: IRouteArray) {
   const snap = useSnapshot(switcher);

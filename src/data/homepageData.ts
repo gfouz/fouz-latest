@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface IRoutesProps {
   path: string;
@@ -12,12 +12,12 @@ export interface TitleProps {
 
 //Function to download a pdf file.
 export function fetchPdf() {
-  fetch("fouzsummary.pdf").then((response) => {
+  fetch('fouzsummary.pdf').then((response) => {
     response.blob().then((blob) => {
       const fileURL = window.URL.createObjectURL(blob);
-      let alink = document.createElement("a");
+      let alink = document.createElement('a');
       alink.href = fileURL;
-      alink.download = "fouzsummary.pdf";
+      alink.download = 'fouzsummary.pdf';
       alink.click();
     });
   });
@@ -39,7 +39,7 @@ export const reactVariant = {
 export const primaryPictureVariants = {
   visible: {
     transition: { duration: 5 },
-    x: "50px",
+    x: '50px',
   },
   hidden: {
     x: 0,
@@ -58,7 +58,7 @@ export const nodeJsLogoVariant = {
   hidden: { rotateX: -90 },
 };
 export const navbarVariant = {
-  visible: { transition: { duration: 1 }, width: "100%" },
+  visible: { transition: { duration: 1 }, width: '100%' },
   hidden: { width: 0 },
 };
 export const finalVariant = {

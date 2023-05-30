@@ -1,6 +1,6 @@
-import Home from "icons/Home";
-import FileSearch from "icons/FileSearch";
-import Link from "next/link";
+import Home from 'icons/Home';
+import FileSearch from 'icons/FileSearch';
+import Link from 'next/link';
 
 export interface IRoutesProps {
   path: string;
@@ -10,17 +10,17 @@ export interface IRoutesProps {
 
 export const Routes: IRoutesProps[] = [
   {
-    path: "/",
+    path: '/',
     icon: <Home color="#ffffff" />,
     link: <Link href="/">Homepage</Link>,
   },
   {
-    path: "/provincia",
+    path: '/provincia',
     icon: <FileSearch color="#ffffff" />,
     link: <Link href="/provincia">Provincia</Link>,
   },
   {
-    path: "/municipio",
+    path: '/municipio',
     icon: <FileSearch color="#ffffff" />,
     link: <Link href="/municipio">Municipio</Link>,
   },

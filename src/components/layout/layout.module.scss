@@ -1,5 +1,5 @@
-@use "scss/abstracts/mixins.scss" as *;
-@use "scss/components/bars" as *;
+@use 'scss/abstracts/mixins.scss' as *;
+@use 'scss/components/bars' as *;
 
 .layout_container {
   @include flex-column-start;

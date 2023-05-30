@@ -1,12 +1,12 @@
-import * as React from "react";
-import axios from "axios";
-import { ResponsiveValue } from "@chakra-ui/react";
+import * as React from 'react';
+import axios from 'axios';
+import { ResponsiveValue } from '@chakra-ui/react';
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = 'http://localhost:4000';
 
-const jwt = localStorage.getItem("jwt");
+const jwt = localStorage.getItem('jwt');
 // Empty value is to be validated by the express middleware.
-const token = jwt ? jwt : "empty";
+const token = jwt ? jwt : 'empty';
 
 export const axiosApi = axios.create({
   baseURL: BASE_URL,
@@ -113,18 +113,18 @@ interface ISuggestedWords {
   password: string;
 }
 export const info: ISuggestedWords = {
-  ci: "Require 11 dígitos y ser mayor de 18 años!",
-  tome: "Requiere 3 dígitos para el tomo!",
-  folio: "Requeridos 3 dígitos para el folio!",
-  name: "Requiere nombres compuestos sin números",
-  tel: "Requiere números nacionales de 8 dígitos ",
-  alpha: "Requiere letras, números y espacios",
-  select: "esta selección es requerida",
-  tutor: "Este dato solo admite letras.",
-  occupancy: "Este dato solo admite letras",
-  file: "Adjunte documento del nombramiento",
-  numeric: "Requiere números enteros o decímales",
-  email: "Debe contener @ y un formato correcto",
+  ci: 'Require 11 dígitos y ser mayor de 18 años!',
+  tome: 'Requiere 3 dígitos para el tomo!',
+  folio: 'Requeridos 3 dígitos para el folio!',
+  name: 'Requiere nombres compuestos sin números',
+  tel: 'Requiere números nacionales de 8 dígitos ',
+  alpha: 'Requiere letras, números y espacios',
+  select: 'esta selección es requerida',
+  tutor: 'Este dato solo admite letras.',
+  occupancy: 'Este dato solo admite letras',
+  file: 'Adjunte documento del nombramiento',
+  numeric: 'Requiere números enteros o decímales',
+  email: 'Debe contener @ y un formato correcto',
   password:
     'Obligatorio: al menos una letra mayuscula y minuscula, número, símbolo y minimo 8 caracteres, por ejemplo : " clave-C123 " ',
 };
@@ -132,12 +132,12 @@ export const info: ISuggestedWords = {
 /*-----------css styles and Chakra attributes types.--------*/
 export type chakraProps = {
   size:
-    | ResponsiveValue<(string & unknown) | "sm" | "md" | "lg" | "xs">
+    | ResponsiveValue<(string & unknown) | 'sm' | 'md' | 'lg' | 'xs'>
     | undefined;
   type: React.HTMLInputTypeAttribute | undefined;
   variant:
     | ResponsiveValue<
-        (string & unknown) | "outline" | "flushed" | "unstyled" | "filled"
+        (string & unknown) | 'outline' | 'flushed' | 'unstyled' | 'filled'
       >
     | undefined;
 };
@@ -184,7 +184,7 @@ export async function getRequestById(
 export async function downloadVaucher(ci: string | undefined): Promise<any> {
   try {
     const res = await axios.get<any>(`http://localhost:4000/voucher`, {
-      responseType: "blob",
+      responseType: 'blob',
     });
     const result = res.data;
     return result;
@@ -227,7 +227,7 @@ interface ServerData {
   [key: string]: string | boolean | number | Other | Other[];
 }
 const obj: ServerData = {
-  name: "giovani",
+  name: 'giovani',
 };
 obj.some = true;
 export async function getRequestAll(path: string): Promise<IFormInput[] | any> {
@@ -263,46 +263,46 @@ export const getServerMessage = (
 
 //Posible incoming messages from server.
 export const messages = [
-  "ok",
-  "updated",
-  "enabled",
-  "associated",
-  "created",
-  "accepted",
-  "not-authorized",
-  "bad-request",
-  "Bad Request",
-  "Forbidden",
-  "Network Error",
-  "unprocessable",
-  "Unprocessable-data",
-  "not-found",
-  "Not Found",
-  "found by id",
-  "gotten-by-id",
-  "Unprocessable Entity",
-  "Request failed with status code 401",
-  "Request failed with status code 422",
+  'ok',
+  'updated',
+  'enabled',
+  'associated',
+  'created',
+  'accepted',
+  'not-authorized',
+  'bad-request',
+  'Bad Request',
+  'Forbidden',
+  'Network Error',
+  'unprocessable',
+  'Unprocessable-data',
+  'not-found',
+  'Not Found',
+  'found by id',
+  'gotten-by-id',
+  'Unprocessable Entity',
+  'Request failed with status code 401',
+  'Request failed with status code 422',
 ];
 
 const functionality = {
   id: 0,
-  name: "",
-  path: "",
+  name: '',
+  path: '',
   enabled: true,
 };
 
 export const initialState = {
-  name: "",
+  name: '',
   ci: 0,
-  rol: "",
+  rol: '',
   tome: 0,
   folio: 0,
-  email: "",
-  price: "",
-  range: "",
-  phone: "",
-  address: "",
+  email: '',
+  price: '',
+  range: '',
+  phone: '',
+  address: '',
   enabled: true,
   funct: [],
 };

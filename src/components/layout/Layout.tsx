@@ -1,11 +1,11 @@
-import * as React from "react";
-import { useSnapshot } from "valtio";
-import { switcher } from "store/store";
-import { Routes } from "components/Routes";
-import Sidebar from "components/sidebar/Sidebar";
-import BurgerButton from "components/button/BurgerButton";
-import Selector from "components/selector/Selector";
-import s from "./layout.module.scss";
+import * as React from 'react';
+import { useSnapshot } from 'valtio';
+import { switcher } from 'store/store';
+import { Routes } from 'components/Routes';
+import Sidebar from 'components/sidebar/Sidebar';
+import BurgerButton from 'components/button/BurgerButton';
+import Selector from 'components/selector/Selector';
+import s from './layout.module.scss';
 
 interface ILayout {
   name?: string;

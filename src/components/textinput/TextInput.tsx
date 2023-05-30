@@ -1,8 +1,8 @@
-import React from "react";
-import { Input, Tooltip } from "@chakra-ui/react";
-import ErrorWarning from "../errorwarning/ErrorWarning";
-import { FormData } from "interfaces/interfaces";
-import { Path, UseFormRegister } from "react-hook-form";
+import React from 'react';
+import { Input, Tooltip } from '@chakra-ui/react';
+import ErrorWarning from '../errorwarning/ErrorWarning';
+import { FormData } from 'interfaces/interfaces';
+import { Path, UseFormRegister } from 'react-hook-form';
 
 type InputAttrs = {
   info?: string;

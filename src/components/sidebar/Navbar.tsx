@@ -1,6 +1,6 @@
-import s from "./navbar.module.scss";
-import { IRouteArray } from "./constants";
-import { useRouter } from "next/router";
+import s from './navbar.module.scss';
+import { IRouteArray } from './constants';
+import { useRouter } from 'next/router';
 
 function Navbar(props: IRouteArray) {
   const router = useRouter();

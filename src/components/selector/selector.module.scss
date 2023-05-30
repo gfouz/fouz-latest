@@ -1,5 +1,5 @@
-@use "scss-components/buttons" as *;
-@use "scss/abstracts/mixins.scss" as *;
+@use 'scss-components/buttons' as *;
+@use 'scss/abstracts/mixins.scss' as *;
 
 .selectorButton {
   @include button(#ffffff, #222222);

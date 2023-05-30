@@ -1,10 +1,10 @@
 export function fetchPdf() {
-  fetch("fouzsummary.pdf").then((response) => {
+  fetch('fouzsummary.pdf').then((response) => {
     response.blob().then((blob) => {
       const fileURL = window.URL.createObjectURL(blob);
-      let alink = document.createElement("a");
+      let alink = document.createElement('a');
       alink.href = fileURL;
-      alink.download = "fouzsummary.pdf";
+      alink.download = 'fouzsummary.pdf';
       alink.click();
     });
   });
@@ -78,5 +78,8 @@ When building highly testable, well-structured, and maintainable backend
 applications using TypeScript.`;
 
 export const about_typescript = `TypeScript can help me to write a lot of 
-JavaScript with fewer bugs or document your code well for other people to
+JavaScript with fewer bugs or document my code well for other people to
 read.`;
+
+export const about_eslint = `Eslint and Prettier can help us catch errors early,
+ make code more legible, and improve overall code quality.`;

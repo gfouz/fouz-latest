@@ -1,8 +1,8 @@
-import "./globals.scss";
+import './globals.scss';
 
 export const metadata = {
-  title: "Dancing on dangerous Portfolio.",
-  description: "Giovani Fouz Portfolio",
+  title: 'Dancing on dangerous Portfolio.',
+  description: 'Giovani Fouz Portfolio',
 };
 
 export default function RootLayout({
