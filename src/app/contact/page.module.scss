@@ -2,6 +2,8 @@
 
 .contact {
   @extend .flex-column-center;
+  align-items: center;
+  width: 100%;
   min-height: 100vh;
   background-position: center top;
   background-repeat: no-repeat;
@@ -11,7 +13,7 @@
 }
 
 .contact__title {
-  @include subtitle(#f1f1f1);
+
   font-style: italic;
   font-size: 19px;
   font-weight: bolder;

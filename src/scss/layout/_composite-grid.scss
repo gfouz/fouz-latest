@@ -1,4 +1,4 @@
-@use 'scss/layout/flex' as *;
+@use '../layout/flex' as *;
 
 .composite-grid {
   display: grid;
@@ -21,7 +21,7 @@
     }
   }
 
-  @media (max-width: 849px) and ( min-width: 750px){
+  @media (max-width: 849px) and (min-width: 750px) {
     & {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:

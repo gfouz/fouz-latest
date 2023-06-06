@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import s from './page.module.scss';
 import { navbarVariant, about_react, experience } from 'data/homepageData';
-import homepage from 'images/work.jpg';
-import colors from 'images/colors.jpg';
+import work from 'images/work.png';
+import books from 'images/books.png';
 import nest from 'images/gradient.jpg';
 import Navbar from 'components/navbar/Navbar';
 import MotionOnScroll from 'components/motiononscroll/MotionOnScroll';
@@ -12,13 +12,13 @@ const pages = ['/', '/about', '/work', '/contact'];
 export default function Home() {
   return (
     <main className={s.work_main}>
-      <Image src={homepage} alt="mainpicture" />
+      <Image src={work} alt="mainpicture" />
       <MotionOnScroll variants={navbarVariant}>
         <Navbar className={s.work__navbar} list={pages} />
       </MotionOnScroll>
       <article className={s.work_article}>
         <section className={s.work_article__section_image}>
-          <Image src={colors} alt="colors" />
+          <Image src={books} alt="colors" />
         </section>
         <section className={s.work_article__section1}>
           <h2 className={s.work_article__title}>Technical profile.</h2>
@@ -42,3 +42,5 @@ export default function Home() {
     </main>
   );
 }
+//npm i -D sass sass-loader
+//npm create vite@latest

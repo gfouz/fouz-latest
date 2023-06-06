@@ -1,11 +1,14 @@
-@forward 'scss/layout/grid';
-@forward 'scss/layout/flex';
-@forward 'scss/components/bars';
-@forward 'scss/abstracts/mixins';
-@forward 'scss/components/navbar';
-@forward 'scss/components/subtitle';
-@forward 'scss/abstracts/font-size';
-@forward 'scss/abstracts/variables';
-@forward 'scss/layout/composite-grid';
-@forward 'scss/layout/absolute-container';
-@forward 'scss/layout/simple-grid-template';
+
+@forward './layout/grid';
+@forward './layout/flex';
+@forward './components/bars';
+@forward './components/image';
+@forward './abstracts/mixins';
+@forward './components/navbar';
+@forward './components/subtitle';
+@forward './components/paragraph';
+@forward './abstracts/font-size';
+@forward './abstracts/variables';
+@forward './layout/composite-grid';
+@forward './layout/absolute-container';
+@forward './layout/simple-grid-template';

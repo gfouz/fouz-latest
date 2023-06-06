@@ -48,6 +48,9 @@
   @extend .composite-grid__aside;
   @include responsive-font-size;
 }
+.about_aside__paragraph {
+  @include paragraph;
+}
 .about__aside_details {
   @extend .flex-column-end;
   align-items: flex-start;

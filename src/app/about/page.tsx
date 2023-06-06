@@ -24,7 +24,7 @@ export default function Home() {
       <aside className={s.about__aside}>
         <article className={s.about__aside_article}>
           <h2 className={s.about__title}>Overview</h2>
-          <p>{paragraph_1}</p>
+          <p className={s.about_aside__paragraph}>{paragraph_1}</p>
         </article>
         
       </aside>
