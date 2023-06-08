@@ -10,7 +10,7 @@ import MotionOnScroll from 'components/motiononscroll/MotionOnScroll';
 
 const pages = ['/', '/about', '/work', '/contact'];
 
-export default function Home() {
+export default function About() {
   return (
     <div className={s.about}>
       <header className={s.about__header}>
@@ -35,11 +35,11 @@ export default function Home() {
               {' '}
               Why do i love typescript?{' '}
             </summary>
-            <p>{about_typescript}</p>
+            <p className={s.about_aside__paragraph}>{about_typescript}</p>
           </details>
           <details open >
             <summary className={s.about__summary}>Two powerful tools.</summary>
-            <p>{about_eslint}</p>
+            <p className={s.about_aside__paragraph}>{about_eslint}</p>
           </details>
         </article>
 
